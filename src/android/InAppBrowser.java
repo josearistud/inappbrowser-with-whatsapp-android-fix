@@ -778,7 +778,7 @@ public class InAppBrowser extends CordovaPlugin {
                 }
             }
 
-            else if (url.startsWith("geo:") || url.startsWith(WebView.SCHEME_MAILTO) || url.startsWith("market:") || url.startsWith("whatsapp:"))  {
+            else if (url.startsWith("geo:") || url.startsWith(WebView.SCHEME_MAILTO) || url.startsWith("market:"))  {
             try {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.p***(url));
@@ -788,7 +788,7 @@ public class InAppBrowser extends CordovaPlugin {
             }
         }
             // If sms:5551212?body=This is the message
-            else if (url.startsWith("sms:")) {
+            else if (url.startsWith("sms:") || url.startsWith("whatsapp:")) {
                 try {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
 
